@@ -1,0 +1,95 @@
+
+.left-side{
+    border-bottom: 1px solid #d5d2d266;
+    background-color: #f9f6f0db;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.cloud-text{
+    font-size: 12px;
+    color: #463e3999;
+}
+.cloud-text:hover{
+    
+    color: #000;
+    cursor: pointer;
+}
+.logo-text{
+  color: #000000ad; 
+  font-weight: 800;
+  font-size: 22px;
+  margin-top: 5px;
+}
+.left-side-logo{
+    display: flex;
+    align-items:center;
+}
+    .left-side,
+.left-side-logo,
+.cloud-text {
+  font-family: "Libertinus Math";
+}
+.left-side-cloud{
+    margin-top: 6px;
+}
+.right-side-cart{
+    display: flex;
+    align-items: center;
+}
+.list-of-cakes{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.list-of-cakes a{
+    margin-right: 20px;
+    color:#928b87 ;
+    text-decoration: none;
+    cursor: pointer;
+}
+.list-of-cakes a:hover{
+   color:#000 ;
+}
+.profile-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.profile-toggle {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+  margin-right: 50px;
+  color: #000!important;
+}
+.profile-toggle:focus, .profile-toggle:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}

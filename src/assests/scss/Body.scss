@@ -1,0 +1,70 @@
+$main-bg:#f9f6f0;
+$icon-clr:#fd7cc2;
+
+.bodytype{
+    background-color: $main-bg;
+    margin-bottom: 35px;
+    padding-top: 90px; 
+    text-align: center;
+    font-family:"Libertinus Math";
+    z-index: 99;
+}
+.bodycontents{
+    background-color: $main-bg;
+}
+
+.head{
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+.card-footer{
+    display: flex;
+   justify-content: space-between;
+    
+}
+.rupees{
+    color: $icon-clr;
+    font-weight: bold; 
+}
+
+/* ..............Cards............. */
+.featured-card-img{
+   height: 200px;
+  }
+.featured-card-text{
+ text-align: left;
+font-size: 12px;
+}
+.featured-card-footer{
+    display: flex;
+   justify-content: space-between;
+   background-color: #fff;
+   border: none;
+
+}
+.featured-card-rupees{
+    color: $icon-clr;
+    font-weight: bold; 
+
+}
+.featured-card-btn{
+    background-color:$icon-clr ;
+    color:#fff ;
+    border: none;
+}
+.detailed-card-text{
+ text-align: left;
+font-size: 12px;
+}
+.detailed-card-img{
+ height: 300px;
+
+ 
+}
+.detailed-card{
+    margin-bottom: 30px;
+}
+///.........list of cake......///
+.icon-text{
+   padding: 10px;
+}

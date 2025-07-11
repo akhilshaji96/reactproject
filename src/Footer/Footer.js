@@ -1,5 +1,5 @@
 import logo from '../assests/icons8-cake-48.png';
-import './Footer.css'
+// import './Footer.css'
 function Footer(){
     return (
            <div className=" container-fluid footer-section d-flex justify-content-between align-items-cente">
