@@ -21,8 +21,8 @@ border-radius: 5px  ;
     padding-left: 25px;
 }
 .buying-img img{
-    width:200px;
-    height:150px;
+    width:150px;
+    height:120px;
     padding: 20px;
 }    
 .buying-content{
@@ -30,6 +30,7 @@ border-radius: 5px  ;
     display:flex;
     border-bottom: 1px solid #d2d2d2;
     border-radius: 10px;
+        height: 125px;
 
 }  
 .buying-item{
@@ -69,7 +70,7 @@ border-radius: 5px  ;
     margin: 10px;
 }
 .price-heading{
-    border-bottom: 1px solid #d2d2d2;
+    // border-bottom: 1px solid #d2d2d2;
     text-align:center;
     
     color:#8e8e8e ;
@@ -83,13 +84,20 @@ border-radius: 5px  ;
      padding: 10px;
     color:#000  ;
     font-weight: bold;
-    border-top: 1px solid #d2d2d2;
+    // border-top: 1px solid #d2d2d2;
 
+}
+.discount{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: rgb(68, 209, 2);
+    font-weight: 500;
 }
 .adresscontent{
     padding: 5px;
 }
-.adresscontent span{
+.adresscontent span {
      margin-bottom: 5px;
      color:#656565 ;
 }
@@ -107,31 +115,42 @@ border-radius: 5px  ;
     color: #fff;
     border-radius: 5px;
 }
-
- .remove-btn:hover {
+.remove-btn:hover {
   background-color: #ff8dcb !important;
 }
 .remove-btn{
     padding: 5px;
 }
 .totalitem-added{
-    background-color: #fff;
+
     display: flex;
         justify-content: space-between;
 }
 .totalhead{
-        padding: 8px 10px;
+        // padding: 8px 10px;
     font-weight: bold;
     font-size: 20px;
+    padding-top: 8px;
 }
 .totalrs{
-        padding: 8px 10px;
+        // padding: 8px 10px;
     font-weight: bold;
     font-size: 20px;
+    padding-top: 8px;
 }
 .address-submit button{
     background-color:#fd7cc2 ;
     padding: 10px;
     border: none;
     margin-top: 20px;
+}
+.card-head{
+    font-size: 20px;
+    color: #8e8e8e;
+    font-weight: bold;
+}
+.scrollable-list {
+  max-height: 400px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }

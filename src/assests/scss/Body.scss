@@ -4,7 +4,7 @@ $icon-clr:#fd7cc2;
 .bodytype{
     background-color: $main-bg;
     margin-bottom: 35px;
-    padding-top: 90px; 
+    // padding-top: 90px; 
     text-align: center;
     font-family:"Libertinus Math";
     z-index: 99;
@@ -67,4 +67,7 @@ font-size: 12px;
 ///.........list of cake......///
 .icon-text{
    padding: 10px;
+}
+.bannercarousel{
+    padding-top: 70px;
 }

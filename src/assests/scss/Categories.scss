@@ -1,0 +1,45 @@
+.categories{
+    text-align: center;
+    padding: 35px;
+    font-family: 'Lucida Sans';
+    cursor: pointer;
+    
+}
+.categories h2{
+    font-family: 'Lucida Sans';
+    font-weight: 200;
+}
+.categoriesimg{
+    // background-color: #fce7f3;
+    // width: 350px;
+    border-radius: 50px;
+font-size: 45px;
+padding: 15px;
+text-align: center;
+}
+.nav .nav-link {
+  color: #555;
+  background: #f9f9f9;
+// border: 1px solid red;
+}
+
+.nav .nav-link:hover {
+  color: #555;
+  border-bottom:5px solid #ec4899;
+  background-color: #ec489a12 !important; 
+  border-radius: 0px !important;
+}
+
+.nav .nav-link.active-tab {
+  background-color: #ec489a12 !important; 
+//   color: white !important;
+  border-bottom:5px solid #ec4899;
+  border-radius: 0px !important;
+  
+}
+
+
+
+
+
+

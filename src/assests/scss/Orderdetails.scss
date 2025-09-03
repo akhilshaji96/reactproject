@@ -1,0 +1,181 @@
+.order-details-head{
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    
+}
+.order-details-headlist{
+    padding-top: 10px ;
+    padding-left: 10px;
+    background-color: #f3f6f9;
+    color: #878a9c;
+    border-radius: 10px;
+}
+.order-details-head p{
+    padding: 10px;
+    font-weight: 500;
+}
+.order-details-body{
+    background-color: #fff;
+    // height: 490px;
+    width: 100%;
+    margin-bottom: 15px;
+   
+
+}
+.card-header{
+    padding: 10px;
+    // font-weight: 300;
+    // border-bottom: #878a9c;
+}
+
+.Logistic-details{
+    background-color: #fff;
+    height: 250px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.customer-details{
+    background-color: #fff;
+    height: 225px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.card-head p{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #dbd9d9;
+    font-weight: 500;
+}
+.orderdetails{
+    margin-top: 70px;
+    padding: 35px;
+    background-color: #f9f6f0;
+    // background-color: #f3f3f9;
+}
+.product-img img{
+    width: 125px;
+    height: 100px;
+}
+.product-details{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.productamount{
+    margin-top: 40px;
+    text-align: left;
+}
+.card-header{
+    text-align: center;
+}
+
+.profile-img img{
+    height: 50px;
+    width: 50px;
+    border-radius: 15%;
+}
+.profile{
+    display: flex;
+    padding: 10px;
+    margin-left: 15px;
+}
+.profile-name{
+    margin-left: 25px;
+    
+}
+.profile-name p{
+    font-size: 12px;
+    
+}
+.customer-contact{
+    margin-left: 25px
+}
+.Billing-Address{
+    background-color: #fff;
+    height: 210px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.billing-address{
+    padding: 15px;
+}
+.amountsection{
+    border-top: 1px solid #dbd9d9;
+    padding: 25px;
+}
+// .............order status...........//
+.order-tracking-container {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 30px;
+  border-left: 2px dashed #ccc;
+}
+
+.step {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  left: -45px;
+  top: 0;
+  background-color: #fd7cc2 !important;
+  color: white;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.content {
+  padding-left: 0px;
+}
+
+.content h4 {
+  margin: 0 0 38px;
+  font-size: 16px;
+  color: #333;
+}
+.order-status-head{
+    padding: 15px;
+    border-bottom:1px solid #dbd9d9;
+    margin-left: 12px;
+    
+}
+.order-status-head h3{
+font-size: 25px;
+}
+
+// .content p {
+//   margin: 4px 0;
+//   font-size: 14px;
+//   color: #555;
+// }
+
+.content span {
+  color: #888;
+  font-size: 13px;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+.order-status-body{
+    background-color: #fff;
+}

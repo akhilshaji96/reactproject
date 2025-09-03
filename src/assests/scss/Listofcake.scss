@@ -1,3 +1,52 @@
 .list-cake{
     margin-top: 90px;
+    
+}
+
+.cardbody{
+    margin-bottom: 15px;
+}
+
+.rupees{
+    margin-left: 15px;
+}
+.cakeprice{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.cakeprice h3{
+    color: #f44ca4;
+    
+}
+.grid-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  
+ 
+}
+
+.grid-list h3 {
+  flex: 1;                 
+  text-align: center;      
+  margin: 0;
+//   font-size: 18px;
+  font-weight: 600;
+  font-family:"Libertinus Math";
+  color: #928b87;
+}
+
+.grid-listbtn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #f44ca4;
+}
+
+.grid-listbtn:hover {
+  color: #f44ca3b7;
 }

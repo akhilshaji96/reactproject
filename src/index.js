@@ -5,12 +5,15 @@ import App from './App';
 import './assests/scss/base.scss'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux';
+import { store } from '../src/utils/cakestore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    
+    <Provider store={store}>
+        <App />
+    </Provider>
   </React.StrictMode>
 );
 

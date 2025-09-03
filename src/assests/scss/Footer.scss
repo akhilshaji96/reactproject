@@ -1,6 +1,55 @@
 $main-bg:#f9f6f0;
+.footer{
+    background-color: #1e1e1e;
+    width: 100%;
+    padding: 30px;
+    // font-family: "Libertinus Math";
+}
+.socialicons{
+    display: flex;
+}
+.footercontent p{
+    color: #8e8e8e;
+    font-size: 12px;
+    margin-left: 45px;
+}
+.footerlogo{
+    display: flex;
+    align-items: flex-end;
+}
+.media{
+    padding: 5px;
+}
+
+.links h5{
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.links li{
+    color: #8e8e8e;
+    margin-left: -30px;
+  
+}
+
+.contacts h5{
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.footericon{
+    color: #8e8e8e;
+}
+.social h5{
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.socialicons{
+     color: #8e8e8e;
+}
 .footer-section{
-    background-color: $main-bg;
+    background-color: #1e1e1e;
     border-top: 1px solid #d5d2d266;
     height: 100px;
      display: flex;
@@ -14,5 +63,36 @@ $main-bg:#f9f6f0;
     font-family: "Libertinus Math";
 }
 .right-side-footer a:hover{
-    color: #000;
+    color: #fff;
+}
+.readyorder{
+    text-align: center;
+    background: linear-gradient(to right, #f44ca4, #9342f7);
+    color: #fff;
+    padding: 45px;
+}
+.ordrbtn{
+    border: 1px solid #fff;
+    background-color: #ffffff00;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 11px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+}
+.ordrbtn:hover{
+    background-color: #fff;
+    color: #f44ca4;
+}
+.links li{
+    text-decoration: none;
+    cursor: pointer;
+}
+.links li:hover{
+    color: #fff;
+}
+.media:hover{
+    color: #fff;
+    cursor: pointer;
 }
