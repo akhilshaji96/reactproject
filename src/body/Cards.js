@@ -17,7 +17,7 @@ function Cards(props) {
    const getCartCount = async () => {
     try {
       const response = await axios.get( `${fetchgetcartcount}/${user_id}`);
-      
+      console.log("count:",response.data.data)
       setCartCount(response.data.data);
   
     } catch (error) {
@@ -73,7 +73,7 @@ function Cards(props) {
                         </CardText>
                         <div className='card-footer' style={{ backgroundColor: '#fff', border: 'none' }}>
                             <div className='rupees'>
-                                <h3>{cakes.cake_price}</h3>
+                                <h3>₹{cakes.cake_price}</h3>
                             </div>
                             <Button onClick={handleClick} style={{ backgroundColor: '#fd7cc2', color: '#fff', border: 'none' }}>
                                 Add to Cart

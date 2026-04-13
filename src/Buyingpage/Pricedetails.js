@@ -1,20 +1,44 @@
-import React, {  useEffect } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { Card, CardHeader, ListGroup, ListGroupItem, Row, Col } from 'reactstrap';
 import QRCode from 'react-qr-code';
-function Pricedetails(props) {
+import { fetchgetcakeCartView } from '../../src/Services/Api';
+import axios from "axios";
+function Pricedetails({onTotalCalculated}) {
+  const userid=2
+  const [pricedetails,SetPriceDetails]=useState([])
+    const [total, setTotal] = useState(0);
 
   function calculateTotal(cakeitem) {
-    return cakeitem.reduce((sum, item) => sum + Number(item.price || 0), 0);
+    return cakeitem.reduce((sum, item) => sum + Number(item.cake_price || 0), 0);
   }
+   const cartorderprice = async () => {
+    try {
+      const response = await axios.get(`${fetchgetcakeCartView}/${userid}`);
+      const cartData = response.data.data;
+      SetPriceDetails(cartData);
+
+      const totalValue = calculateTotal(cartData);
+      setTotal(totalValue);
+      if (onTotalCalculated) {
+        onTotalCalculated(totalValue);
+      }
+    } catch (error) {
+      console.error("Error fetching cart:", error);
+    }
+  };
+     
 
 
   useEffect(() => {
-    const total = calculateTotal(props.cakeitem);
-    if (props.onTotalCalculated) {
-      props.onTotalCalculated(total); // send to parent
-    }
-  }, [props.cakeitem]);
-
+    cartorderprice();
+    // const total = calculateTotal(cartData);
+    // if (onTotalCalculated) {
+    //   onTotalCalculated(total); // send to parent
+    // }
+  }, []
+);
+ const discount = (total * 5) / 100;
+  const finalTotal = total - discount;
 
 
   return (
@@ -28,15 +52,15 @@ function Pricedetails(props) {
           <ListGroupItem>
             <Row>
 
-              {props.cakeitem.map((item) => (<div className='price-item'>
+              {pricedetails.map((item) => (<div className='price-item'>
                 <Col md='4'>
-                  <span>{item.title}</span>
+                  <span style={{fontSize:"12px"}}>{item.cake_name}</span>
                 </Col>
                 <Col md='2'>
-                  <span style={{fontWeight:'400',fontSize:'12px',color:'#000'}}>KG : 1</span>
+                  <span style={{fontWeight:'500',fontSize:'12px',color:'#6d6b6bff'}}>KG : 1</span>
                 </Col>
                 <Col md='3'>
-                  <span> ₹ {item.price}</span>
+                  <span style={{fontSize:"12px"}}> ₹ {item.cake_price}</span>
                 </Col>
               </div>
               ))}
@@ -68,7 +92,7 @@ function Pricedetails(props) {
                 <span style={{fontWeight:'bold' }}> Total </span>
               </Col>
               <Col md="3">
-                <span style={{ marginLeft: '17px', fontWeight:'bold' }}>₹{props.disCount}</span>
+                <span style={{ marginLeft: '17px', fontWeight:'bold' }}>₹{finalTotal}</span>
               </Col>
             </Row>
           </CardHeader>

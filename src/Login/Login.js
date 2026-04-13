@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { fetchcheckLogin } from '../Services/Api';
 import Swal from 'sweetalert2';
-
+import { useSelector } from "react-redux";
 // Validation Schema
 const validationSchema = Yup.object({
   f_email_id: Yup.string().email('Invalid email').required('Email is required'),
@@ -19,17 +19,20 @@ const validationSchema = Yup.object({
 });
   const notify = () => toast('Sucessfully Logged in', { theme: 'light', position: 'top-right' })
   const loginfailednotify = () => toast('LoginFailed', { theme: 'light', position: 'top-right' })
-    const successSwalConfig = {
+
+  
+function Login() {
+  const username = useSelector((state) => state.auth.username);
+  console.log("username",username)
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const successSwalConfig = {
   position: "center",
   icon: "success",
-  title: "You’ve logged in successfully 🎉",
+  title: `<span style="color:#ff4da6; ">Welcome ${username}, you’re logged in! 🎉🎉🎉</span>`,
   showConfirmButton: false,
   timer: 1500,
 };
-function Login() {
-
-      const navigate = useNavigate()
-      const dispatch = useDispatch();
 
       
   return (

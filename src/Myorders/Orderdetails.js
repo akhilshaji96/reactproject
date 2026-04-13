@@ -9,7 +9,45 @@ import { FaGift } from "react-icons/fa";
 import { MdDeliveryDining } from "react-icons/md";
 import { GiCardboardBox } from "react-icons/gi";
 import Footer from "../Footer/Footer";
+import { useParams } from "react-router-dom";
+import { fetchgetOrderDetailsByOrderId } from '../../src/Services/Api'
+import axios from "axios";
+import { useEffect, useState } from 'react';
+import { useSelector } from "react-redux";
 function Orderdetails() {
+     const username = useSelector((state) => state.auth.username);
+const { id } = useParams(); 
+console.log("klklklkk",id)
+const [orders, setOrders] = useState([])
+  const DetailsByOrderId = async () => {
+      try {
+         
+        const response = await axios.get(`${fetchgetOrderDetailsByOrderId}/${id}`,
+       
+          
+          
+          {
+            headers: {
+              "Content-Type": "application/json"
+            }
+          },
+          );
+        console.log("OrderDetailsByOrderId Successfully:", response.data.data);
+       setOrders(response.data.data.item_details)
+      } catch (error) {
+      
+        if (error.response) {
+          console.error("Server Error:", error.response.data);
+        } else if (error.request) {
+          console.error("No Response from Server");
+        } else {
+          console.error("Error:", error.message);
+        }
+      }
+    };
+    useEffect(() => {
+        DetailsByOrderId();
+    },[]);
     return (
         <div>
 
@@ -21,7 +59,7 @@ function Orderdetails() {
                 <Row>
                     <Col md='9'>
                         <div className="order-details-head">
-                            <p>Order #VL2667</p>
+                            <p>Order <strong>{id}</strong> </p>
                         </div>
                         <div className="order-details-headlist">
                             <Row>
@@ -44,14 +82,15 @@ function Orderdetails() {
 
                         </div>
                         <div className="order-details-body">
+                            {orders.map((item) => (
                             <Row>
                                 <Col md='4'>
                                     <div className="product-details">
                                         <div className="product-img">
-                                            <img src="https://handletheheat.com/wp-content/uploads/2015/03/Best-Birthday-Cake-with-milk-chocolate-buttercream-SQUARE.jpg"></img>
+                                            <img src={item.cake_image}></img>
                                         </div>
                                         <div className="product-content">
-                                            <h5>Milk chocolate</h5>
+                                            <h5>{item.cake_name}</h5>
                                             <h6>Kg : 1</h6>
                                             <p>Natural Ingridents</p>
                                         </div>
@@ -63,12 +102,12 @@ function Orderdetails() {
 
                                 <Col md='2' >
                                     <div className="productamount">
-                                        <p>250	</p>
+                                        <p>{item.cake_price}</p>
                                     </div>
                                 </Col>
                                 <Col md='2'>
                                     <div className="productamount">
-                                        <p>2	</p>
+                                        <p>1</p>
                                     </div>
                                 </Col>
                                 <Col md='2'>
@@ -78,13 +117,15 @@ function Orderdetails() {
                                 </Col>
                                 <Col md='2'>
                                     <div className="productamount">
-                                        <p>250	</p>
+                                        <p>{item.cake_price}</p>
                                     </div>
                                 </Col>
 
 
                             </Row>
-                            <div className="amountsection">
+                            ))}
+                            {/* <div className="amountsection">
+                                 {orders.map((item) => (
                                 <Row>
                                     <Col md='8'>
                                     </Col>
@@ -97,14 +138,15 @@ function Orderdetails() {
                                         </div>
                                     </Col>
                                     <Col md='2' style={{ textAlign: 'left' }}>
-                                        <p>250</p>
+                                        <p>{item.cake_price}</p>
                                         <p>-50</p>
                                         <p>50</p>
-                                        <h6>250</h6>
+                                        <h6>{item.cake_price}</h6>
                                     </Col>
 
                                 </Row>
-                            </div>
+                                  ))}
+                            </div> */}
                         </div>
                         <div className="order-status-body">
                             <div className="order-status-head">
@@ -196,7 +238,7 @@ function Orderdetails() {
                                     <img src="https://i.pravatar.cc/40"></img>
                                 </div>
                                 <div className="profile-name">
-                                    <h6>David Warner</h6>
+                                    <h6>{username}</h6>
                                     <p>Customer</p>
 
                                 </div>

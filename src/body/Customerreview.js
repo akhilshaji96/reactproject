@@ -11,9 +11,13 @@ function Customerreview(){
 
    
 const ReviewDetails = async () => {
+  const Data = {
+                  start: 0,
+                  numberOfRows: 3
+                };
       try {
         const response = await axios.post(
-          fetchgetAllComments,
+          fetchgetAllComments,Data,
          
           {
             headers: {
@@ -21,8 +25,8 @@ const ReviewDetails = async () => {
             }
           },
           );
-          setReviews(response.data.data)
-           console.log("Review Successfully:", response.data.data);
+          setReviews(response.data.data.result)
+           console.log("Review Successfully:", response.data.data.result);
       } catch (error) {
         if (error.response) {
           console.error("Server Error:", error.response.data);

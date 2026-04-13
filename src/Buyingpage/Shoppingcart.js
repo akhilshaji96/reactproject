@@ -4,7 +4,8 @@ import {  useEffect,useState } from 'react';
 import { fetchgetcakeCartView } from '../../src/Services/Api';
 import axios from "axios";
 function Shoppingcart(props) {
-   const userid=1
+  console.log("propssss",props)
+   const userid=2
      const [orderadded, setOrderadded] = useState([])
    const cartordercakes = async () => {
     try {
@@ -40,7 +41,8 @@ function Shoppingcart(props) {
         </CardHeader>
         <ListGroup flush>
           <ListGroupItem className="scrollable-list">
-            {orderadded.map((item) => (
+            {orderadded.length > 0 ? (
+            orderadded.map((item) => (
               <div className='buying-content'>
                 <div className='buying-img'>
                   <img src={item.cake_image} alt={item.title} />
@@ -54,7 +56,9 @@ function Shoppingcart(props) {
 
                 </div>
               </div>
-            ))}
+            ))
+            ):( <p>Your cart is empty</p>)
+          }
           </ListGroupItem>
 
           <CardHeader>
@@ -63,7 +67,7 @@ function Shoppingcart(props) {
                 <p>Total</p>
               </div>
               <div className='totalrs'>
-                <p>₹{props.disCount}</p>
+                <p>₹{props.totalAmount}</p>
               </div>
             </div>
           </CardHeader>

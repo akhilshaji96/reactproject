@@ -26,14 +26,14 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/list" element={<Listofcakes />} />
-        <Route path="/detailed/:id" element={<Detailedpage />} />
+        <Route path="/detailed/:cake_id" element={<Detailedpage />} />
         <Route path="/buy" element={<Buyingpage />} />
         <Route path="/logout" element={<Login />} />
         <Route path="/myorders" element={<Myorders />} />
         <Route path="/contact" element={<Contact />} />
          <Route path="/about" element={<Aboutus />} />
          <Route path="/myprofile" element={<Myprofile />} />
-          <Route path="/orderdetails" element={<Orderdetails />} />
+          <Route path="/orderdetails/:id" element={<Orderdetails />} />
         
       </Routes>
        <ToastContainer></ToastContainer>

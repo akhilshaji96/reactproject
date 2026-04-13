@@ -8,8 +8,9 @@
 }
 
 .rupees{
-    margin-left: 15px;
+    // margin-left: 15px;
 }
+
 .cakeprice{
     display: flex;
     justify-content: space-between;
@@ -27,6 +28,13 @@
   margin-bottom: 15px;
   
  
+}
+.back-arrow{
+ font-size: 35px;
+ color: #f44ca4;
+ padding-left: 10px;
+
+ cursor: pointer;
 }
 
 .grid-list h3 {

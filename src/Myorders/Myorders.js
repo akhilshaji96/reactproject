@@ -1,73 +1,86 @@
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
-// import React, { useState } from 'react';
+import axios from "axios";
+import { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { Link } from "react-router-dom";
+import { fetchorderHistoryByUserId } from '../../src/Services/Api'
+import { useNavigate } from 'react-router-dom';
+// import { useParams } from "react-router-dom";
 function Myorders(){
- const columns = [
-  {
-    name: 'Name',
-    selector: row => row.name,
-  },
-  {
-    name: 'Email',
-    selector: row => row.email,
-  },
-  {
-    name: 'Phone',
-    selector: row => row.phone,
-  },
-  {
-    name: 'Product',
-    selector: row => row.product,
-  },
- 
-];
+  const navigate = useNavigate();
+  const [myorder,setMyorder]=useState([])
+  const user_id=1
+   const myorders = async () => {
+      try {
+         
+        const response = await axios.get(`${fetchorderHistoryByUserId}/${user_id}`,
+       
+          
+          
+          {
+            headers: {
+              "Content-Type": "application/json"
+            }
+          },
+          );
+        console.log("myOrder Successfully:", response.data);
+        setMyorder( response.data.data)
+      } catch (error) {
+      
+        if (error.response) {
+          console.error("Server Error:", error.response.data);
+        } else if (error.request) {
+          console.error("No Response from Server");
+        } else {
+          console.error("Error:", error.message);
+        }
+      }
+    };
+    useEffect(() => {
+        myorders();
+    },[]);
+     const handleRowClick = (order) => {
+    navigate(`/orderdetails/${order.order_id}`, { state: { order } });
+    
+  };
 
-const data = [
-  {
-    id: 1,
-    name: 'John',
-    email: 'john@gmai.com',
-    phone: 7894561232,
-    product: 'Black Forest'
-  },
-  {
-    id: 2,
-    name: 'Jane',
-    email: 'jane@gmail.com',
-    phone: 7894561232,
-    product: 'Black Forest'
-  },
-   {
-    id: 3,
-    name: 'Jane',
-    email: 'jane@gmail.com',
-    phone: 7894561232,
-    product: 'Black Forest'
-  },
-   {
-    id: 4,
-    name: 'Jane',
-    email: 'jane@gmail.com',
-    phone: 7894561232,
-    product: 'Black Forest'
-  },
-];
-    return(
-        <div>
-            <Header></Header>
-        <div className="tabledata" style={{marginTop:'70px',textDecoration:'none'}}>
-    <Link to ='/orderdetails'><DataTable
-        columns={columns}
-        data={data}
-        pagination
-        highlightOnHover
-        responsive/></Link>    
+  return (
+  <div>
+    <Header />
+    <div style={{ marginTop: '70px' }}>
+      <div className="table-container">
+        <table className="table">
+          <thead>
+            <tr >
+              <th>SlNo</th>
+              <th>UserName</th>
+              <th>Order-Id</th>
+              <th>Total Items</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myorder.map((order, idx) => (
+               
+              <tr onClick={() => handleRowClick(order)}>
+                
+                <td>{order.order_slno}</td>
+                <td>{order.user_name}</td>
+                <td>{order.order_id}</td>
+                <td>{order.total_items}</td>
+                <td>{order.order_total}</td>
+             
+              </tr>
+             
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
+    <Footer />
+  </div>
+);
 
-            <Footer></Footer>
-        </div>
-    )
 }
 export default Myorders

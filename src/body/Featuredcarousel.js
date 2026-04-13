@@ -9,38 +9,29 @@ function Featuredcarousel(props){
       const [loading, setloading] = useState(false);
       console.log('ttttt',props.cakebydetails)
 
-       
-  //       async function cakedatas() {
-  //   try {
-  //     setloading(true);
-  //     const response = await fetch("https://mocki.io/v1/4c96305c-b4d6-4b40-af21-46e3e63ae4eb");
-
-  //     setTimeout(async () => {
-  //       const data = await response.json();
-  //       setCake(data);
-  //       setloading(false);
-  //     }, 2000); 
-  //   } catch (error) {
-  //     console.error(error);
-  //     setloading(false);
-  //   }
-  // }
+      
   const cakeByDetails = async () => {
       try {
           setloading(true);
+          const Data = {
+                  start: 0,
+                  numberOfRows: 3
+                };
         const response = await axios.post(
-          fetchgetAllCakeApi,
+          fetchgetAllCakeApi,Data,
          
           
           {
             headers: {
               "Content-Type": "application/json"
-            }
+            }, 
+           
           },
           );
-           setCake(response.data.data); 
+           setCake(response.data.data.result); 
+           console.log("gggg",response.data.data.result)
           setloading(false);
-           console.log("Data Sent Successfully:", response.data);
+           console.log("Data Sent Successfully....:", response.data);
       } catch (error) {
         setloading(false);
         if (error.response) {
@@ -68,7 +59,7 @@ useEffect(() => {
                   </Col>
                 ))
               : cake.map((item, idx) => (
-                <Cards cakes={item} size={3} className="detailed-card" to= {`/detailed/${item.id}`} state={{ cake: item }} key={idx} />
+                <Cards cakes={item} size={3} className="detailed-card" to= {`/detailed/${item.cake_id}`} state={{ cake: item }} key={idx} />
                 ))}
             </Row>
         </Container>
